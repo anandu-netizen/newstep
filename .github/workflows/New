@@ -1,0 +1,19 @@
+#!/bin/bash
+
+#CALENDAR DAY
+cal
+
+#DATE AND TIME
+date
+
+#DAILY GREETING
+echo "Welcome to Hell $LOGNAME"
+
+if
+[ "$PWD" == "$HOME" ]
+then 
+echo "You are in the first circle of hell aka $HOME $LOGNAME"
+else
+echo "You have passed to the next circle of hell aka $PWD $LOGNAME"
+fi
+
