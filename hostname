@@ -1,0 +1,19 @@
+#!/bin/bash
+#Purpose: Get info on Hostname, IP address abd DNS
+
+#function declaration and variables
+function host_info () {
+#!/bin/bash
+#Purpose: Get info on Hostname, IP address abd DNS
+
+#function declaration and variables
+function host_info () {
+        local dnsips
+        dnsips=$(sed -e '/^$/d' /etc/resolv.conf | awk '{if (tolower($1)=="nameserver") printf $2}')
+        write_header "Hostname and DNS information" 
+        echo "Hostname is $(hostname -s)"
+        echo "DNS domain is $(hostname -d)"
+        echo "Fully qualified domain name is $(hostname -f)"
+        echo "Network address (IP) is $(hostname -i)"
+        echo "DNS name server (DNS IP) is $(dnsips)"
+        }
